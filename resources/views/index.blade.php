@@ -28,7 +28,7 @@
         <div class="">
             <div class="border-l-4 border-blue-500 pl-6">
                 <h6 class="text-blue-500 font-bold text-[20px]">Về chúng tôi</h6>
-                <h6 class="font-bold text-[25px]">KHU DU LỊCH NGHỈ DƯỠNG NẰM GIỮA LÒNG THÀNH PHỐ</h6>
+                <h6 class="font-bold text-[23px]">CHAMPA ISLAND NHA TRANG - RESORT HOTEL & SPA</h6>
             </div>
             <div class="font-bold text-[20px] mt-6">
                 <span>Được mệnh danh là hòn đảo giữa lòng thành phố Nha Trang, Champa Island Nha Trang - Resort Hotel & Spa sở hữu những công trình kiến ​​trúc Chăm sang trọng, độc đáo và hấp dẫn nhất.</span>
@@ -52,21 +52,24 @@
         <h6 class="font-bold text-[25px]">DỊCH VỤ DÀNH CHO BẠN</h6>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 mt-4">
-        
-            <div class="w-[450px] shadow-md rounded-lg overflow-hidden">
-                <div class="h-[250px]">
-                    <img class="h-[250px] w-full" src="/storage/images/service_pic/" alt="">
-                </div>
-                <div class="text-center">
-                    <p class="font-bold text-lg mt-2"></p>
-                    <a href="" class="mb-4 duration-300 inline-flex items-center text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 mt-2">
-                        Xem Chi Tiết
-                    </a>
-                </div>
-            </div>
-        
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 gap-y-6 mt-4">
+    <a href="#">
+        <img class="rounded-t-lg" src="/storage/images/gioithieu.jpg" alt="" />
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bắn cung và chèo sup</h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Chèo thuyền SUP và Bắn cung là một trong những dịch vụ giải trí mới tại Resort đang được đông đảo du khách và giới trẻ đón nhận vì giúp giải tỏa căng thẳng, nâng cao tính kiên nhẫn cũng như kỹ năng quan sát và tập trung của người chơi.</p>
+        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Read more
+             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+            </svg>
+        </a>
     </div>
+</div>
+
 </div>
 @include('layouts.footer')
 </body>

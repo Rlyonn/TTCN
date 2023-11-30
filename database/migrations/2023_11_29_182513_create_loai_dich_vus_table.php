@@ -9,10 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('loai_dich_vus', function (Blueprint $table) {
-            $table->id();
+            $table->string('maLoaiDV', 10)->primary();
+            $table->string('tenLoai', 255);
             $table->timestamps();
         });
     }
