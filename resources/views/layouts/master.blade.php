@@ -148,7 +148,8 @@
                                             <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white" href="">Xem Dịch Vụ</a>
                                         </li>
                                         <li>
-                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white" href="">Loại Dịch Vụ</a>
+                                            <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white" 
+                                            href="{{ route('loai_dich_vus.index') }}">Loại Dịch Vụ</a>
                                         </li>
                                     </ul>
                                 </div>
