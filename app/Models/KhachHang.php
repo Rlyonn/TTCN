@@ -53,7 +53,7 @@ class KhachHang extends Model
                 $codeNumber = 1;
             }
             // Format mã khách hàng và gán vào model
-            $khach_hang->maKH = 'KH' . str_pad($codeNumber, 6, '0', STR_PAD_LEFT);
+            $khach_hang->maKH =  str_pad($codeNumber, 6, '0', STR_PAD_LEFT);
             $userId = $khach_hang->maKH;
             if (request()->hasFile('anh')) {
                 $image = request()->file('anh');

@@ -3,17 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KhachHangController;
 use App\Http\Controllers\LoaiDichVuController;
+use App\Http\Controllers\DichVuController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -21,6 +13,7 @@ Route::prefix('admin')->group(function () {
     });
     Route::resource('khach_hangs', KhachHangController::class);
     Route::resource('loai_dich_vus', LoaiDichVuController::class);
+    Route::resource('dich_vus', DichVuController::class);
 });
 
 Route::get('/', function () {

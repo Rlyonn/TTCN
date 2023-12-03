@@ -33,7 +33,7 @@ class LoaiDichVu extends Model
                 $codeNumber = 1;
             }
             // Format mã khách hàng và gán vào model
-            $loai_dich_vu->maLoaiDV = 'LDV' . str_pad($codeNumber, 6, '0', STR_PAD_LEFT);
+            $loai_dich_vu->maLoaiDV = str_pad($codeNumber, 6, '0', STR_PAD_LEFT);
         });
     }
 }

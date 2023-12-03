@@ -58,7 +58,7 @@
                             </form>
                             <span class="mx-1">|</span>
                             <a href="{{ route('loai_dich_vus.edit', $ldv->maLoaiDV) }}" >
-                                <img src="/storage/images/icon/edit.png" alt="Edit Icon" class="icon-image w-50">
+                                <img src="/storage/images/icon/edit.png" alt="Edit Icon">
                             </a>
                         </td>
                     </tr>
