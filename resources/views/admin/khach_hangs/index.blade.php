@@ -41,6 +41,8 @@
                         border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Ngày Sinh</th>
                         <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b
                         border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Giới Tính</th>
+                        <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b
+                        border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">CHỨC NĂNG</th>
                         <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-gray-200 border-solid shadow-none tracking-none whitespace-nowrap text-slate-400 opacity-70"></th>
                     </tr>
                     </thead>
@@ -77,7 +79,7 @@
                             <form class="inline-block mr-1" action="{{ route('khach_hangs.destroy', $kh->maKH) }}" method="post" id="deleteForm{{$kh->maKH}}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" class="font-semibold leading-tight text-xs text-slate-400" data-cus-id="{{ $kh->maKH }}">Xoá</button>
+                                <button type="button" class="font-semibold leading-tight text-x1 text-slate-400 delete-btn" data-cus-id="{{ $kh->maKH }}">Xoá</button>
                             </form>|
                             <a href="{{ route('khach_hangs.edit', $kh->maKH) }}" class="font-semibold leading-tight text-xs text-slate-400"> Sửa </a> |
                             <a href="{{ route('khach_hangs.show', $kh->maKH) }}" class="font-semibold leading-tight text-xs text-slate-400"> Chi Tiết </a>

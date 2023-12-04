@@ -63,7 +63,6 @@
                                 @method('DELETE')
                                 <button type="button" class="font-semibold leading-tight text-xs text-slate-400 delete-btn" data-service-id="{{ $hd->maHD }}">Xoá</button>
                             </form>|
-                            <a href="{{ route('hoa_dons.edit', $hd->maHD) }}" class="font-semibold leading-tight text-xs text-slate-400"> Sửa </a> |
                             <a href="{{ route('hoa_dons.show', $hd->maHD) }}" class="font-semibold leading-tight text-xs text-slate-400"> Chi Tiết </a>
                         </td>
                     </tr>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HoaDon;
+use App\Models\Cthd;
 use App\Models\KhachHang;
 use App\Http\Requests\HoaDon\StoreHoaDonRequest;
 use App\Http\Requests\HoaDon\UpdateHoaDonRequest;
@@ -79,12 +80,15 @@ class HoaDonController extends Controller
     }
 
     
-    public function show(HoaDon $hoaDon)
+    public function show($maHD)
     {
-        //$table = HoaDon::where('maHD', $hoaDon)->first();
-        return view('admin.cthd.show', [
-            'maHD' => $hoaDon,
-        ]);
+        $hoa_dons = HoaDon::where('maHD', $maHD)->first();
+        $cthds = CTHD::where('maHD', $maHD)->first();
+        if ($hoa_dons) {
+            return view('admin.hoa_dons.show', ['hoa_dons' => $hoa_dons, 'cthds' => $cthds]);
+        } else {
+            return redirect()->route('cthds.index')->with('error', 'Hóa đơn không tồn tại');
+        }
     }
 
 
@@ -99,8 +103,12 @@ class HoaDonController extends Controller
     }
 
 
-    public function destroy(HoaDon $hoaDon)
+    public function destroy($maHD)
     {
-        //
+        $result = HoaDon::query()->where('maHD', $maHD)->delete();
+        if ($result) {
+            return redirect()->route('hoa_dons.index')->with('success', 'Hóa đơn đã được xóa thành công!');
+        }
+        return redirect()->route('hoa_dons.index')->with('error', 'Không tìm thấy hóa đơn để xoá!');
     }
 }

@@ -102,8 +102,4 @@ class KhachHangController extends Controller
         return redirect()->route('khach_hangs.index')->with('error', 'Không tìm thấy khách hàng để xoá!');
     }
 
-    public function export()
-    {
-        return Excel::download(new KhachHangExport(), 'khach-hangs'.'.xlsx');
-    }
 }
