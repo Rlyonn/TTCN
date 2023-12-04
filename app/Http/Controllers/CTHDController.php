@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CTHD;
-use App\Http\Requests\StoreCTHDRequest;
-use App\Http\Requests\UpdateCTHDRequest;
+use App\Models\Cthd;
+use App\Http\Requests\StoreCthdRequest;
+use App\Http\Requests\UpdateCthdRequest;
 
-class CTHDController extends Controller
+class CthdController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class CTHDController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCTHDRequest $request)
+    public function store(StoreCthdRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class CTHDController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CTHD $cTHD)
+    public function show(Cthd $cthd)
     {
         //
     }
@@ -43,7 +43,7 @@ class CTHDController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CTHD $cTHD)
+    public function edit(Cthd $cthd)
     {
         //
     }
@@ -51,7 +51,7 @@ class CTHDController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCTHDRequest $request, CTHD $cTHD)
+    public function update(UpdateCthdRequest $request, Cthd $cthd)
     {
         //
     }
@@ -59,7 +59,7 @@ class CTHDController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CTHD $cTHD)
+    public function destroy(Cthd $cthd)
     {
         //
     }
