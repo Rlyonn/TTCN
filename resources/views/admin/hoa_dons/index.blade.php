@@ -59,13 +59,21 @@
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <p class="mb-0 font-semibold leading-tight text-xs">{{ $hd->email }}</p>
                         </td> 
-                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                        <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent"> 
                             <form class="inline-block mr-1" action="{{ route('hoa_dons.destroy', $hd->maHD) }}" method="post" id="deleteForm{{$hd->maHD}}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" class="font-semibold leading-tight text-xs text-slate-400 delete-btn" data-service-id="{{ $hd->maHD }}">Xoá</button>
-                            </form>|
-                            <a href="{{ route('hoa_dons.show', $hd->maHD) }}" class="font-semibold leading-tight text-xs text-slate-400"> Chi Tiết </a>
+                                <button type="button" class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500 delete-btn" data-service-id="{{ $hd->maHD }}">
+                                    <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
+                                    </svg>
+                                </button>
+                            </form>
+                            <a href="{{ route('hoa_dons.show', $hd->maHD) }}" type="button" class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"> 
+                                <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="none" viewBox="0 0 18 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 2h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m6 0v3H6V2m6 0a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M5 5h8m-5 5h5m-8 0h.01M5 14h.01M8 14h5"/>
+                                </svg>
+                            </a>                            
                         </td>
                     </tr>
                     @endforeach
