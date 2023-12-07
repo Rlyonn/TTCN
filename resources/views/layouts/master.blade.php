@@ -65,7 +65,7 @@
                         <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">MENU</h3>
                         <ul class="mb-6 flex flex-col gap-1.5 text-white">
                             <li>
-                                <a href=""
+                                <a href="{{ route('adminIndex') }}"
                                     class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark">
                                     <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -157,7 +157,7 @@
                             </li>
 
                             <li>
-                                <a href=""
+                                <a href="{{ route('ves.index') }}"
                                     class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark">
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" height="19px"
                                         viewBox="0 0 576 512">
@@ -199,7 +199,7 @@
                                     </svg>
                                     Hoá Đơn
                                 </a>
-                            </li>                            
+                            </li>                         
 
                         </ul>
                     </div>
