@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+@include('layouts.notifySuccess')
     <div class="mb-2 flex">
         <a href="{{ route('loai_dich_vus.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer duration-300 ease-in-out">
             Thêm
@@ -54,7 +55,7 @@
                             <form class="inline-block mr-1" action="{{ route('loai_dich_vus.destroy', $ldv->maLoaiDV) }}" method="post" id="deleteForm{{$ldv->maLoaiDV}}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500 delete-btn" data-cus-id="{{$ldv->maLoaiDV}}">
+                                <button type="button" class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500 delete-btn" data-type-service-id="{{ $ldv->maLoaiDV }}">
                                     <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
                                     </svg>

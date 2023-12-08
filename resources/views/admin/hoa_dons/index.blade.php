@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+@include('layouts.notifySuccess')
     <div class="mb-2 flex">        
         <div class="ml-4 mr-2">
             <form action="" method="GET" class="flex items-center space-x-4">

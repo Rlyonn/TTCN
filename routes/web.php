@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InfoController;
+use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\KhachHangController;
 use App\Http\Controllers\LoaiDichVuController;
 use App\Http\Controllers\DichVuController;
@@ -20,6 +22,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('ves', VeController::class);
 });
 
-Route::get('/', function () {
-    return view('index');
-});
+
+Route::get('/', [DichVuController::class, 'homeIndex'])->name('index');
+Route::get('/layouts', [DichVuController::class, 'seeMore'])->name('seemore');
+Route::get('/show/{maDV}', [DichVuController::class, 'showForCustomer'])->name('show');

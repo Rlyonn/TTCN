@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    @include('layouts.notifySuccess')
+@include('layouts.notifySuccess')
     <div class="mb-2 flex">
         <a href="{{ route('ves.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer duration-300 ease-in-out">
             Thêm
