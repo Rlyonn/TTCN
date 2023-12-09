@@ -9,6 +9,7 @@ use App\Http\Controllers\DichVuController;
 use App\Http\Controllers\HoaDonController;
 use App\Http\Controllers\CthdController;
 use App\Http\Controllers\VeController;
+use App\Http\Controllers\SearchController;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -26,3 +27,4 @@ Route::prefix('admin')->group(function () {
 Route::get('/', [DichVuController::class, 'homeIndex'])->name('index');
 Route::get('/layouts', [DichVuController::class, 'seeMore'])->name('seemore');
 Route::get('/show/{maDV}', [DichVuController::class, 'showForCustomer'])->name('show');
+Route::get('/search', [SearchController::class, 'index'])->name('search');

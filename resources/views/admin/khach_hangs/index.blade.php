@@ -51,7 +51,7 @@
                     @foreach($khach_hangs as $kh)
                     <tr>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 ml-4 font-semibold leading-tight text-xs">{{ $kh->maKH }}</p>
+                            <p class="mb-0 ml-4 font-semibold leading-tight text-x1">{{ $kh->maKH }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
@@ -59,22 +59,22 @@
                                     <img src="/storage/images/user_avt/{{ $kh->maKH }}/{{ $kh->anh }}" class="inline-flex items-center justify-center mr-4 text-white transition-all duration-200 ease-soft-in-out text-sm h-9 w-9 rounded-xl" alt="user1" />
                                 </div>
                                 <div class="flex flex-col justify-center">
-                                    <h6 class="mb-0 leading-normal text-sm">{{ $kh->hoTenKH }}</h6>
-                                    <p class="mb-0 leading-tight text-xs text-slate-400">{{ $kh->email }}</p>
+                                    <h6 class="mb-0 leading-normal text-x1">{{ $kh->hoTenKH }}</h6>
+                                    <p class="mb-0 leading-tight text-x1 text-slate-400">{{ $kh->email }}</p>
                                 </div>
                             </div>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $kh->sdt }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $kh->sdt }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $kh->diaChi }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $kh->diaChi }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $kh->getNgaySinh }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $kh->getNgaySinh }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $kh->genderName }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $kh->genderName }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <form class="inline-block mr-1" action="{{ route('khach_hangs.destroy', $kh->maKH) }}" method="post" id="deleteForm{{$kh->maKH}}">

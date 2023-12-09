@@ -46,19 +46,19 @@
                     @foreach($hoa_dons as $hd)
                     <tr>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 ml-4 font-semibold leading-tight text-xs">{{ $hd->maHD }}</p>
+                            <p class="mb-0 ml-4 font-semibold leading-tight text-x1">{{ $hd->maHD }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $hd->getTenKH->hoTenKH }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $hd->getTenKH->hoTenKH }}</p>
                         </td>                
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $hd->SDT }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $hd->SDT }}</p>
                         </td>                        
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $hd->ngayThanhToan }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $hd->ngayThanhToan }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <p class="mb-0 font-semibold leading-tight text-xs">{{ $hd->email }}</p>
+                            <p class="mb-0 font-semibold leading-tight text-x1">{{ $hd->email }}</p>
                         </td> 
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent"> 
                             <form class="inline-block mr-1" action="{{ route('hoa_dons.destroy', $hd->maHD) }}" method="post" id="deleteForm{{$hd->maHD}}">

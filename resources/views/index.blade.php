@@ -25,7 +25,7 @@
 <div class="container mx-auto flex mt-6">
     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="w-[500px] h-[500px] bg-cover bg-[url('/storage/images/gioithieu.jpg')] shadow-md rounded-md"></div>
-        <div class="">
+        <div>
             <div class="border-l-4 border-blue-500 pl-6">
                 <h6 class="text-blue-500 font-bold text-[20px]">Về chúng tôi</h6>
                 <h6 class="font-bold text-[23px]">CHAMPA ISLAND NHA TRANG - RESORT HOTEL & SPA</h6>
@@ -66,8 +66,7 @@
                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                     </svg>
-                </a>
-                
+                </a>                
             </div>
         @endforeach
     </div>
