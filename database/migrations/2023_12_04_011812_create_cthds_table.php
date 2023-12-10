@@ -9,16 +9,19 @@ return new class extends Migration
 
     public function up()
     {
-        Schema::create('cthds', function (Blueprint $table){
-            $table->string('maHD', 10);
-            $table->string('maVe', 10);
+        Schema::create('cthds', function (Blueprint $table) {
+            $table->unsignedBigInteger('maVe');
+            $table->unsignedBigInteger('maHD');
             $table->float('soLuong');
             $table->string('giaTien');
-            $table->primary(['maHD', 'maVe']);
+            
             $table->foreign('maVe')->references('maVe')->on('ves');
             $table->foreign('maHD')->references('maHD')->on('hoa_dons');
+            
             $table->timestamps();
         });
+        
+        
     }
 
     public function down()

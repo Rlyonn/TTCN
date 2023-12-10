@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('khach_hangs', function (Blueprint $table) {
-            $table->string('maKH', 10)->primary();
+            $table->id('maKH');
             $table->string('hoTenKH', 255);
             $table->string('sdt', 20)->nullable();
             $table->text('diaChi')->nullable();

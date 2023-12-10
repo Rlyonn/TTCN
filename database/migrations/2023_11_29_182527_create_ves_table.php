@@ -12,11 +12,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('ves', function (Blueprint $table) {
-            $table->string('maVe', 10)->primary();
-            $table->string('maDV', 10);
+            $table->id('maVe');            
             $table->boolean('loaiVe');
             $table->decimal('giaTien',  $precision = 13, $scale = 0);
-            $table->foreign('maDV')->references('maDV')->on('dich_vus');
+            $table->unsignedBigInteger('maDV');
+            $table->foreign('maDV')->references('maDV')->on('dich_vus');            
             $table->timestamps();
         });
     }

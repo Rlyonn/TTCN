@@ -92,7 +92,7 @@ class KhachHangController extends Controller
         }
         return redirect()->route('khach_hangs.index')->with('error', 'Không thể cập nhật thông tin khách hàng!');
     }
-
+    
     public function destroy($maKH)
     {
         $result = KhachHang::query()->where('maKH', $maKH)->delete();

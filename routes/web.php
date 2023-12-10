@@ -25,6 +25,5 @@ Route::prefix('admin')->group(function () {
 
 
 Route::get('/', [DichVuController::class, 'homeIndex'])->name('index');
-Route::get('/layouts', [DichVuController::class, 'seeMore'])->name('seemore');
 Route::get('/show/{maDV}', [DichVuController::class, 'showForCustomer'])->name('show');
 Route::get('/search', [SearchController::class, 'index'])->name('search');

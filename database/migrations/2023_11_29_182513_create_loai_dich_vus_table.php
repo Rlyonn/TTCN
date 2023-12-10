@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('loai_dich_vus', function (Blueprint $table) {
-            $table->string('maLoaiDV', 10)->primary();
+            $table->id('maLoaiDV');
             $table->string('tenLoai', 255);
             $table->timestamps();
         });
