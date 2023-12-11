@@ -21,22 +21,7 @@ class Ve extends Model
         'loaiVe',
         'giaTien',
     ];
-    protected static function boot()
-    {
-        parent::boot();
-        static::creating(function ($ves) {
-            // Tạo mã vé mới dựa trên mã vé cuối cùng
-            $lastTicket = Ve::query()->orderBy('maVe', 'desc')->first();
-            if ($lastTicket) {
-                $lastCode = $lastTicket->maVe;
-                $codeNumber = (int)substr($lastCode, 2) + 1;
-            } else {
-                $codeNumber = 1;
-            }
-            // Format mã vé và gán vào model
-            $ves->maVe = str_pad($codeNumber, 6, '0', STR_PAD_LEFT);
-        });
-    }
+    
     
     public function getTenDichVu()
     {

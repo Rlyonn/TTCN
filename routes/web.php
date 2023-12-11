@@ -10,6 +10,7 @@ use App\Http\Controllers\HoaDonController;
 use App\Http\Controllers\CthdController;
 use App\Http\Controllers\VeController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\AuthManagerController;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -27,3 +28,12 @@ Route::prefix('admin')->group(function () {
 Route::get('/', [DichVuController::class, 'homeIndex'])->name('index');
 Route::get('/show/{maDV}', [DichVuController::class, 'showForCustomer'])->name('show');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+
+Route::get('register', [AuthManagerController::class, 'showRegistration'])->name('show-registration');
+Route::post('register', [AuthManagerController::class, 'register'])->name('register');
+Route::get('login', [AuthManagerController::class, 'showLogin'])->name('show-login');
+Route::post('login', [AuthManagerController::class, 'login'])->name('login');
+
+Route::middleware('checkLogin')->group(function(){
+    Route::get('logout', [AuthManagerController::class, 'logout'])->name('logout');
+});

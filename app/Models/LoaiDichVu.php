@@ -20,20 +20,4 @@ class LoaiDichVu extends Model
         'tenLoai',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-        static::creating(function ($loai_dich_vu) {
-            // Tạo mã khách hàng mới dựa trên mã khách hàng cuối cùng
-            $lastCustomer = LoaiDichVu::query()->orderBy('maLoaiDV', 'desc')->first();
-            if ($lastCustomer) {
-                $lastCode = $lastCustomer->maLoaiDV;
-                $codeNumber = (int)substr($lastCode, 3) + 1;
-            } else {
-                $codeNumber = 1;
-            }
-            // Format mã khách hàng và gán vào model
-            $loai_dich_vu->maLoaiDV = str_pad($codeNumber, 6, '0', STR_PAD_LEFT);
-        });
-    }
 }

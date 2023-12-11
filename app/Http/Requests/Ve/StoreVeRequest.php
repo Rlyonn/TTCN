@@ -28,7 +28,6 @@ class StoreVeRequest extends FormRequest
                 'bail',
                 'required',
                 'string',
-                'min:3',
                 'max:255',
                 'exists:dich_vus,maDV'
             ],

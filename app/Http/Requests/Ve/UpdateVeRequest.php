@@ -27,8 +27,7 @@ class UpdateVeRequest extends FormRequest
             'maDV' => [
                 'bail',
                 'required',
-                'string',
-                'min:3',
+                'string',                
                 'max:255',
                 'exists:dich_vus,maDV',
             ],

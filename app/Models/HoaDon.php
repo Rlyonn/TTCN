@@ -23,8 +23,6 @@ class HoaDon extends Model
         } else {
             $codeNumber = 1;
         }
-        // Format mã loại nhân viên
-        return str_pad($codeNumber, 6, '0', STR_PAD_LEFT);
     }
     public function getTenKH(){
         return $this->belongsTo(KhachHang::class, 'maKH', 'maKH');
