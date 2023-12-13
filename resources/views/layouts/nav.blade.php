@@ -25,7 +25,7 @@
                     </li>
                     @if (Auth::check())
                         <li>
-                            <a href="" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">XIN CHÀO, {{auth()->user()->name}}</a>
+                            <a href="{{route('show-profile')}}" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">XIN CHÀO, {{auth()->user()->name}}</a>
                         </li>
                         <li>
                             <a href="{{route('logout')}}" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">ĐĂNG XUẤT</a>

@@ -11,6 +11,7 @@ use App\Http\Controllers\CthdController;
 use App\Http\Controllers\VeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AuthManagerController;
+use App\Http\Controllers\ProfileUserController;
 
 Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', function () {
@@ -36,4 +37,7 @@ Route::post('login', [AuthManagerController::class, 'login'])->name('login');
 
 Route::middleware('checkLogin')->group(function(){
     Route::get('logout', [AuthManagerController::class, 'logout'])->name('logout');
+    Route::get('profile', [ProfileUserController::class, 'showProfile'])->name('show-profile');
+    Route::get('profile/edit', [ProfileUserController::class, 'edit'])->name('edit-profile');
+    Route::post('profile/edit', [ProfileUserController::class, 'update'])->name('update-profile');
 });
