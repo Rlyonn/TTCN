@@ -12,7 +12,7 @@ use App\Http\Controllers\VeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AuthManagerController;
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.index');
     })->name('adminIndex');

@@ -32,7 +32,8 @@ class AuthManagerController extends Controller
                 'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự.',
                 'confirm.same' => 'Mật khẩu xác nhận không đúng. Vui lòng thử lại',
             ]);
-            // Format mã khách hàng và gán vào model
+
+            $password = bcrypt($request->password);
             $khachHang->hoTenKH = $request->name;
             $khachHang->email = $request->email;
             $khachHang->matKhau = $password;
