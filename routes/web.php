@@ -12,6 +12,7 @@ use App\Http\Controllers\VeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AuthManagerController;
 use App\Http\Controllers\ProfileUserController;
+use App\Http\Controllers\CartController;
 
 Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', function () {
@@ -41,3 +42,5 @@ Route::middleware('checkLogin')->group(function(){
     Route::get('profile/edit', [ProfileUserController::class, 'edit'])->name('edit-profile');
     Route::post('profile/edit', [ProfileUserController::class, 'update'])->name('update-profile');
 });
+Route::get('/cart', [CartController::class, 'index'])->name('cartIndex');
+Route::get('/cart/{maDV}', [CartController::class, 'addToCart'])->name('addToCart');
