@@ -12,10 +12,10 @@
 </head>
 <body>
 @include('layouts.nav')
-<section class="overflow-hidden bg-white py-11 font-poppins">
-    <div>
-        <div class="flex flex-wrap -mx-4">
-            <div class="w-full px-4 md:w-1/2 ">
+<section class="overflow-hidden bg-white font-poppins">
+    <div class="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
+        <div class="flex flex-wrap">
+            <div class="md:w-2/5">
                 <div class="sticky top-0 overflow-hidden ">
                     <div class="relative mb-6 lg:mb-10 lg:h-2/4 ">
                         <img src="/storage/images/service_pic/{{$dich_vu[1]->maDV}}/{{$dich_vu[1]->anh}}" alt=""
@@ -71,7 +71,7 @@
                             {{ $dich_vu[1]->diaChiDV }}
                         </p>
                     </div>
-                    <form method="post" action="">
+                    <form method="post" action="{{ route('addToCart') }}">
                         @csrf
                         <input type="hidden" name="maDV" value="{{ $dich_vu[1]->maDV }}">
                     <div class="flex items-center mb-8">
@@ -101,9 +101,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
 </section>
-
 <script>
     document.getElementById('showMoreButton').addEventListener('click', function() {
         var div = document.querySelector('.h-20');

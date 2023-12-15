@@ -42,5 +42,10 @@ Route::middleware('checkLogin')->group(function(){
     Route::get('profile/edit', [ProfileUserController::class, 'edit'])->name('edit-profile');
     Route::post('profile/edit', [ProfileUserController::class, 'update'])->name('update-profile');
 });
+
+// cart route
 Route::get('/cart', [CartController::class, 'index'])->name('cartIndex');
-Route::get('/cart/{maDV}', [CartController::class, 'addToCart'])->name('addToCart');
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart');
+Route::post('/cart/increase', [CartController::class, 'increaseQuantity'])->name('increaseQuantity');
+Route::post('/cart/decrease', [CartController::class, 'decreaseQuantity'])->name('decreaseQuantity');
+Route::post('/cart/remove', [CartController::class, 'removeItemFromCart'])->name('removeItemFromCart');
