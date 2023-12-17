@@ -113,59 +113,14 @@
                     <span>Tổng Tiền</span>
                     <span>{{ !empty($cart) ? number_format($tongTien, 0, ',', '.') : '0'}} VNĐ</span>
                 </div>
-                
-                <button name="redirect" class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full" type="submit">Thanh toán</button>
+                <form action="{{ url('/vnpay_payment') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="total_vnpay" value="{{!empty($cart) ? $tongTien : '0'}}">
+                    <button name="redirect" class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full" type="submit">Thanh toán</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<!-- component -->
-{{-- <div class="flex flex-col md:flex-row w-screen h-full px-14 py-7">
-
-    <!-- My Cart -->
-    <div class="w-full flex flex-col h-fit gap-4 p-4 ">
-        <p class="text-blue-900 text-xl font-extrabold">Giỏ hàng</p>    
-
-    </div>
-
-    <!-- Purchase Resume -->
-    <div class="flex flex-col w-full bg-white md:w-2/3 h-fit gap-4 p-4">
-        <p class="text-blue-900 text-xl font-extrabold">Purchase Resume</p>
-        <div class="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
-            <div class="flex flex-row justify-between">
-                <p class="text-gray-600">Subtotal (2 Items)</p>
-                <p class="text-end font-bold">$99.98</p>
-            </div>
-            <hr class="bg-gray-200 h-0.5">
-            <div class="flex flex-row justify-between">
-                <p class="text-gray-600">Freight</p>
-                <div>
-                <p class="text-end font-bold">$3.90</p>
-                <p class="text-gray-600 text-sm font-normal">Arrives on Jul 16</p>
-                </div>
-            </div>
-            <hr class="bg-gray-200 h-0.5">
-            <div class="flex flex-row justify-between">
-                <p class="text-gray-600">Discount Coupon</p>
-                <a class="text-gray-500 text-base underline" href="#">Add</a>
-            </div>
-            <hr class="bg-gray-200 h-0.5">
-            <div class="flex flex-row justify-between">
-                <p class="text-gray-600">Total</p>
-                <div>
-                <p class="text-end font-bold">$103.88</p>
-                </div>
-            </div>
-            <div class="flex gap-2">
-                <button class="transition-colors text-sm bg-blue-600 hover:bg-blue-700 p-2 rounded-sm w-full text-white text-hover shadow-md">
-                        FINISH  
-                </button>
-                <button class="transition-colors text-sm bg-white border border-gray-600 p-2 rounded-sm w-full text-gray-700 text-hover shadow-md">
-                        ADD MORE PRODUCTS
-                </button>
-            </div>
-        </div>
-    </div>
-</div> --}}
 </body>
 </html>

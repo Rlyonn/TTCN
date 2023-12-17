@@ -13,6 +13,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AuthManagerController;
 use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 
 Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('/', function () {
@@ -30,6 +31,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 Route::get('/', [DichVuController::class, 'homeIndex'])->name('index');
 Route::get('/show/{maDV}', [DichVuController::class, 'showForCustomer'])->name('show');
 Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::post('/vnpay_payment', [PaymentController::class, 'vnpay_payment']);
 
 Route::get('register', [AuthManagerController::class, 'showRegistration'])->name('show-registration');
 Route::post('register', [AuthManagerController::class, 'register'])->name('register');

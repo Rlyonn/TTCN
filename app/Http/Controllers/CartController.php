@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cthd;
 use App\Models\DichVu;
+use App\Models\HoaDon;
+use App\Models\KhachHang;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Invoice;
+use Mail;
 
 class CartController extends Controller
 {
     public function index() {
-        $cart = Session::get('cart', []);
-
-        return view('cart.index', compact('cart'));
+        return view('cart.index');
     }
-    public function addToCart(Request $request) {                                                                                                                                                                                                                                                                                                                                                   
+    public function addToCart(Request $request) {
         $maDV = $request->input('maDV');
         $loaiVe = $request->input('loaiVe');
         $dichVu = DB::table('dich_vus')
@@ -85,4 +89,5 @@ class CartController extends Controller
         }
         return redirect()->route('cartIndex');
     }
+
 }
