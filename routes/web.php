@@ -51,3 +51,4 @@ Route::post('/cart/add', [CartController::class, 'addToCart'])->name('addToCart'
 Route::post('/cart/increase', [CartController::class, 'increaseQuantity'])->name('increaseQuantity');
 Route::post('/cart/decrease', [CartController::class, 'decreaseQuantity'])->name('decreaseQuantity');
 Route::post('/cart/remove', [CartController::class, 'removeItemFromCart'])->name('removeItemFromCart');
+Route::get('/cart/callback', [CartController::class, 'handlePaymentCallback'])->name('handlePaymentCallback');

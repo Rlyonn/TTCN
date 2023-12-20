@@ -169,7 +169,8 @@
                                                                     {{$ve->giaTien}}
                                                                 </td>
                                                                 @php
-                                                                    $thanhTien = $ve->giaTien * $ct->soLuong;
+                                                                    $stt = 1;
+                                                                    $thanhTien = 0;
                                                                 @endphp
                                                             @endif
                                                         @endforeach
@@ -187,12 +188,12 @@
                                         <td colspan="2">
 
                                         </td>
-                                        <td class="font-bold text-black text-l">
+                                        {{-- <td class="font-bold text-black text-l">
                                             THÀNH TIỀN:
                                         </td>
                                         <td class="text-center font-bold text-black text-l">
                                             {{$thanhTien}}
-                                        </td>
+                                        </td> --}}
                                         <td>
 
                                         </td>

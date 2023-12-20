@@ -89,5 +89,50 @@ class CartController extends Controller
         }
         return redirect()->route('cartIndex');
     }
+    
+    public function handlePaymentCallback(Request $request)
+    {
+        
+        $vnp_ResponseCode = $request->input('vnp_ResponseCode');
+        if ($vnp_ResponseCode === '00') {
+            $email = Session::get('email');
+            $khach_hang = KhachHang::query()->where('email', $email)->first();  
+                    
+            $cart = Session::get('cart');
+            
+            $newHoaDon = new HoaDon();  
+            $newHoaDon->maKH = $khach_hang->maKH;
+            $newHoaDon->ngayThanhToan = Carbon::now();
+            $newHoaDon->SDT = $khach_hang->sdt;
+            $newHoaDon->email = $email;
+            $newHoaDon->save();
+        
+            $maHD = HoaDon::max('maHD');
+           
+            foreach ($cart as $maVe => $each) {
+                $newCTHD = new Cthd();
+                $newCTHD->maVe = $maVe;
+                $newCTHD->maHD = $maHD;
+                $newCTHD->soLuong = $each['quantity'];
+                $gia = $each['quantity'] * $each['gia'];
+                $newCTHD->giaTien = $gia;
+                $newCTHD->save();                
+            }
 
+            // Send email
+            // $email_user = $khach_hang->email;
+            // $name_user = $khach_hang->tenKH;
+            // Mail::send('emails.checkout', compact('newHoaDon', 'khach_hang', 'newCTHD', 'cart'), function ($email) use ($email_user, $name_user) {
+            //     $email->subject('Hóa đơn');
+            //     $email->to($email_user, $name_user);
+            // });
+
+            Session::forget('cart');
+
+
+            return view('cart.success');
+        } else {
+            return view('cart.failure');
+        }
+    }
 }
