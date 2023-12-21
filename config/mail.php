@@ -40,7 +40,7 @@ return [
             'port' => 587,
             'encryption' => 'tls',
             'username' => 'ly.dt.62cntt@ntu.edu.vn',
-            'password' => 'mbyhvpumfyagghqj',
+            'password' => 'xhudlqglvvoptuza',
             'timeout' => null,
         ],
 

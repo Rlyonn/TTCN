@@ -111,102 +111,84 @@
                 <div class="py-5"></div>
                 <!-- Lịch sử mua hàng -->
                 @if (Auth::User()->admin == 0)
-                <div class="bg-white p-3 shadow-sm rounded-sm">
-                    <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-                        <span clas="text-green-500">
-                            <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                            </svg>
-                        </span>
-                        <span class="tracking-wide">Lịch sử giao dịch</span>
-                    </div>
-                    <div class="text-gray-700">
-                        <div class="relative overflow-x-auto">
-                            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                                    <tr>
-                                        <th scope="col" class="text-center px-6 py-3">
-                                            STT
-                                        </th>
-                                        <th scope="col" class="text-center px-6 py-3">
-                                            Dịch vụ
-                                        </th>
-                                        <th scope="col" class="text-center px-6 py-3">
-                                            Số lượng
-                                        </th>
-                                        <th scope="col" class="text-center px-6 py-3">
-                                            Đơn giá
-                                        </th>
-                                        <th scope="col" class="text-center px-6 py-3">
-                                            Ngày giao dịch
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php
-                                        $stt = 1;
-                                    @endphp
-                                    @foreach ($lichSuGiaoDich as $item)
-                                    <tr class="bg-white">
-                                        @foreach ($cthds as $ct)
-                                            @if ($ct->maHD == $item->maHD)
-                                                @foreach ($ves as $ve)
-                                                    @if($ve->maVe == $ct->maVe)
-                                                        @foreach ($dichVus as $dichVu)
-                                                            @if ($dichVu->maDV == $ve->maDV)
-                                                                <td class="text-center px-6 py-4">
-                                                                    {{$stt++}}
-                                                                </td>
-                                                                <td class="px-6 py-4">
-                                                                    {{$dichVu->tenDV}}
-                                                                </td>
-                                                                <td class="text-center px-6 py-4">
-                                                                    {{$ct->soLuong}}
-                                                                </td>
-                                                                <td class="text-center px-6 py-4">
-                                                                    {{$ve->giaTien}}
-                                                                </td>
-                                                                @php
-                                                                    $stt = 1;
-                                                                    $thanhTien = 0;
-                                                                @endphp
-                                                            @endif
-                                                        @endforeach
-                                                    @endif
-                                                @endforeach
-                                            @endif
+                    <div class="bg-white p-3 shadow-sm rounded-sm">
+                        <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
+                            <span clas="text-green-500">
+                                <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                </svg>
+                            </span>
+                            <span class="tracking-wide">Lịch sử giao dịch</span>
+                        </div>
+                        <div class="text-gray-700">
+                            <div class="relative overflow-x-auto">
+                                <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                        <tr>
+                                            <th scope="col" class="text-center px-6 py-3">
+                                                STT
+                                            </th>
+                                            <th scope="col" class="text-center px-6 py-3">
+                                                Dịch vụ
+                                            </th>
+                                            <th scope="col" class="text-center px-6 py-3">
+                                                Số lượng
+                                            </th>
+                                            <th scope="col" class="text-center px-6 py-3">
+                                                Đơn giá
+                                            </th>
+                                            <th scope="col" class="text-center px-6 py-3">
+                                                Ngày giao dịch
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php
+                                            $stt = 1;
+                                        @endphp
+                                        @foreach ($lichSuGiaoDich as $item)
+                                            @foreach ($cthds as $ct)
+                                                @if ($ct->maHD == $item->maHD)
+                                                    @foreach ($ves as $ve)
+                                                        @if ($ve->maVe == $ct->maVe)
+                                                            @foreach ($dichVus as $dichVu)
+                                                                @if ($dichVu->maDV == $ve->maDV)
+                                                                    <tr class="bg-white">
+                                                                        <td class="text-center px-6 py-4">
+                                                                            {{ $stt++ }}
+                                                                        </td>
+                                                                        <td class="px-6 py-4">
+                                                                            {{ $dichVu->tenDV }}
+                                                                        </td>
+                                                                        <td class="text-center px-6 py-4">
+                                                                            {{ $ct->soLuong }}
+                                                                        </td>
+                                                                        <td class="text-center px-6 py-4">
+                                                                            {{ $ve->giaTien }}
+                                                                        </td>
+                                                                        <td class="px-6 py-4 text-center">
+                                                                            {{ $item->ngayThanhToan }}
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+                                                                @endif
+                                                            @endforeach
+                                                        @endif
+                                                    @endforeach
+                                                @endif
+                                            @endforeach
                                         @endforeach
-                                        
-                                        
-                                        <td class="px-6 py-4 text-center">
-                                            {{$item->ngayThanhToan}}
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-gray-400 pb-4">
-                                        <td colspan="2">
-
-                                        </td>
-                                        {{-- <td class="font-bold text-black text-l">
-                                            THÀNH TIỀN:
-                                        </td>
-                                        <td class="text-center font-bold text-black text-l">
-                                            {{$thanhTien}}
-                                        </td> --}}
-                                        <td>
-
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endif
                 <!-- End of about section -->
 
+                
                 <div class="my-4"></div>
             </div>
         </div>

@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full px-4 md:w-1/2 ">
+            <div class="w-full px-4 md:w-2/4 ">
                 <div class="lg:pl-20">
                     <div class="">
                         <h2 class="max-w-xl mt-2 mb-6 text-2xl font-bold md:text-4xl">
@@ -45,7 +45,7 @@
                                 @endfor
                             </ul>
                         </div>
-                        <div class="h-20 text-2xl font-bold overflow-hidden">
+                        <div class="h-20 text-sm font-bold overflow-hidden">
                             <p class="max-w-xl mb-5 text-gray-500">
                                 {{ $dich_vu[1]->moTa }}
                             </p>

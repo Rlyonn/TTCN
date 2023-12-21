@@ -119,13 +119,13 @@ class CartController extends Controller
                 $newCTHD->save();                
             }
 
-            // Send email
-            // $email_user = $khach_hang->email;
-            // $name_user = $khach_hang->tenKH;
-            // Mail::send('emails.checkout', compact('newHoaDon', 'khach_hang', 'newCTHD', 'cart'), function ($email) use ($email_user, $name_user) {
-            //     $email->subject('Hóa đơn');
-            //     $email->to($email_user, $name_user);
-            // });
+            //Send email
+            $email_user = $khach_hang->email;
+            $name_user = $khach_hang->tenKH;
+            Mail::send('emails.checkout', compact('newHoaDon', 'khach_hang', 'newCTHD', 'cart'), function ($email) use ($email_user, $name_user) {
+                $email->subject('Hóa đơn');
+                $email->to($email_user, $name_user);
+            });
 
             Session::forget('cart');
 

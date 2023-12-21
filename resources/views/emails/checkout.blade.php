@@ -14,16 +14,12 @@
 
     <div class="max-w-2xl mx-auto p-4">
         <h2 class="text-2xl text-blue-500">Xin chào {{ $khach_hang->hoTenKH }}</h2>
-        <p class="text-gray-700">Cảm ơn bạn đã đặt vé du lịch Vinpearl tại trang của chúng tôi. Bạn hãy vui lòng kiểm tra thông tin hóa đơn!</p>
+        <p class="text-gray-700">Cảm ơn bạn đã đặt vé tại trang của chúng tôi. Bạn hãy vui lòng kiểm tra thông tin hóa đơn!</p>
     </div>
 
     <div class="max-w-2xl mx-auto p-4 mt-4 bg-white shadow-md">
         <h3 class="text-2xl font-semibold mb-2">Thông tin hóa đơn</h3>
         <table class="w-full table-auto">
-            <tr>
-                <th class="bg-blue-500 text-white p-2">Mã hóa đơn</th>
-                <td class="p-2">{{ $newHoaDon->maHD }}</td>
-            </tr>
             <tr>
                 <th class="bg-blue-500 text-white p-2">Khách hàng</th>
                 <td class="p-2">{{ $khach_hang->hoTenKH }}</td>

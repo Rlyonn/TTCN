@@ -65,7 +65,7 @@
 
                     <div class="mb-6">
                         <label class="mb-2.5 block text-black font-bold">
-                            Địa Chỉ
+                            Địa Chỉ <span class="text-meta-1">*</span>
                         </label>
                         <textarea name="diaChiDV" rows="2" placeholder="Nhập địa chỉ dịch vụ" class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter">{{ old('diaChiDV', $dich_vu->diaChiDV) }}</textarea>
                         @if($errors->has('diaChiDV'))
@@ -84,7 +84,7 @@
 
                     <div class="mb-6">
                         <label class="mb-2.5 block text-black font-bold">
-                            Loại Nhân Viên
+                            Loại Dịch Vụ
                         </label>
                         <div class="relative z-20 bg-transparent">
                             <select name="maLoaiDV" class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary">

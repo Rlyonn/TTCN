@@ -39,11 +39,11 @@
                             <p class="mb-0 font-semibold leading-tight text-xs">{{ $item->giaTien }}</p>
                         </td>
                         <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                            <form class="inline-block mr-1" action="{{ route('cthds.destroy', $item->maHD) }}" method="post" id="deleteForm{{$item->maHD}}">
+                            {{-- <form class="inline-block mr-1" action="{{ route('cthds.destroy', $item->maHD) }}" method="post" id="deleteForm{{$item->maHD}}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="button" class="font-semibold leading-tight text-x1 text-slate-400 delete-btn" data-hoadon-id="{{ $item->maHD }}">Xoá</button>
-                            </form>|
+                            </form>| --}}
                             <a href="{{ route('cthds.show', $item->maHD) }}" class="font-semibold leading-tight text-xs text-slate-400"> Chi Tiết </a>
                         </td>
                     </tr>
