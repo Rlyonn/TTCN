@@ -55,6 +55,7 @@
         }
     </script>
     <title>@yield('title')</title>
+    <link rel="shortcut icon" href="//theme.hstatic.net/1000067077/1000396284/14/favicon.png?v=1801" type="image/png">
 </head>
 <body>
     @include('layouts.nav')

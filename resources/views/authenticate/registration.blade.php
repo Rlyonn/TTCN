@@ -1,5 +1,6 @@
 @extends('layouts.layoutLogin')
 @section('title', 'Đăng ký')
+<link rel="shortcut icon" href="//theme.hstatic.net/1000067077/1000396284/14/favicon.png?v=1801" type="image/png">
 @section('main')<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <form action="{{route('register')}}" method="POST">
   @csrf
