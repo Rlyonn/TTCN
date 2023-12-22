@@ -110,7 +110,7 @@
 
                     <div class="mb-6">
                         <label class="mb-2.5 block text-black font-bold">
-                            Địa Chỉ
+                            Địa Chỉ <span class="text-meta-1">*</span>
                         </label>
                         <textarea name="diaChi" rows="2" placeholder="Nhập địa chỉ của bạn" class="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter">{{ old('diaChi', $khach_hang->diaChi) }}</textarea>
                         @if($errors->has('diaChi'))

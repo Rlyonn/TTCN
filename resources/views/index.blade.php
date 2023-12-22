@@ -71,7 +71,7 @@
                 </a>                
             </div>
         @endforeach
-    </div>
+    </div>>
     <div class="mt-6 px-2 flex justify-center items-center">
         {!! $dich_vus->links('layouts.pagination') !!}
     </div>

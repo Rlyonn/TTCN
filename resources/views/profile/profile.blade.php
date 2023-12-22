@@ -29,7 +29,7 @@
                 <div class="bg-white p-3">
                     <div class="image overflow-hidden  border-b-4 border-green-400">
                         <img class="h-auto w-full mx-auto"
-                            src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3JtNjA5LXNvbGlkaWNvbi13LTAwMi1wLnBuZw.png"
+                            src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"
                             alt="">
                     </div>
                     <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{$name}}</h1>
@@ -166,11 +166,14 @@
                                                                             {{ $ct->soLuong }}
                                                                         </td>
                                                                         <td class="text-center px-6 py-4">
-                                                                            {{ $ve->giaTien }}
+                                                                            {{ number_format($ve->giaTien, 0, ',', '.') }} VNĐ
                                                                         </td>
                                                                         <td class="px-6 py-4 text-center">
                                                                             {{ $item->ngayThanhToan }}
                                                                         </td>
+                                                                        @php
+                                                                            $thanhTien = $ve->giaTien * $ct->soLuong;
+                                                                        @endphp
                                                                     </tr>
                                                                     
                                                                 @endif
@@ -179,6 +182,17 @@
                                                     @endforeach
                                                 @endif
                                             @endforeach
+                                            <tr class="border-b border-gray-400 pb-4">
+                                                <td colspan="2">
+        
+                                                </td>
+                                                <td class="font-bold text-black text-l">
+                                                    THÀNH TIỀN:
+                                                </td>
+                                                <td class="text-center font-bold text-black text-l">                                                    
+                                                    {{ number_format($thanhTien, 0, ',', '.') }} VNĐ        
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
